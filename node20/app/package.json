@@ -5,8 +5,9 @@
   "description": "Visual regression testing example configuration using Jest and Puppeteer",
   "main": "index.js",
   "scripts": {
-    "quite": "echo \"Shutting down\"",
-    "test": "jest"
+    "quiet": "echo \"Shutting down\"",
+    "test": "jest",
+    "test-update": "jest --updateSnapshot"
   },
   "license": "ISC",
   "devDependencies": {

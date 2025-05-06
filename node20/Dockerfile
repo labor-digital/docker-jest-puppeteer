@@ -18,4 +18,4 @@ RUN npm install
 # Install browsers for puppeteer
 RUN ./node_modules/puppeteer/install.mjs
 
-CMD ["npm", "run", "quite"]
+CMD ["npm", "run", "quiet"]

@@ -20,7 +20,7 @@ const toMatchImageSnapshot = configureToMatchImageSnapshot({
   },
   failureThreshold: 0.001,
   failureThresholdType: 'percent',
-  customSnapshotsDir: './tests/image-snapshots',
-  customDiffDir: './tests/image-snapshots/diff',
+  customSnapshotsDir: process.env.TEST_ROOT_DIR + '/tests/image-snapshots',
+  customDiffDir: process.env.TEST_ROOT_DIR + '/tests/image-snapshots/diff',
 });
 expect.extend({ toMatchImageSnapshot });
