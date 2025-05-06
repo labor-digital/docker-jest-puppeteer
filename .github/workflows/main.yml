@@ -1,0 +1,21 @@
+name: Build and push - All
+
+on:
+  schedule:
+    - cron: '0 8 * * *'
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Login to DockerHub Registry
+        run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+      - name: Build and push node20
+        run: |
+          cd node20
+          docker build . --file Dockerfile --tag labordigital/jest-puppeteer:node-20
+          docker push labordigital/jest-puppeteer:node-20

@@ -1,0 +1,23 @@
+{
+  "name": "jest-puppeteer-testing-example",
+  "version": "1.0.0",
+  "author": "",
+  "description": "Visual regression testing example configuration using Jest and Puppeteer",
+  "main": "index.js",
+  "scripts": {
+    "quite": "echo \"Shutting down\"",
+    "test": "jest"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.27.1",
+    "@babel/plugin-transform-runtime": "^7.27.1",
+    "@babel/preset-env": "^7.27.1",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "jest-image-snapshot": "^6.4.0",
+    "jest-junit": "^16.0.0",
+    "jest-puppeteer": "^11.0.0",
+    "puppeteer": "^24.8.0"
+  }
+}
