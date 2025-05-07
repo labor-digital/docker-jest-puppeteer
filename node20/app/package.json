@@ -5,7 +5,6 @@
   "description": "Visual regression testing example configuration using Jest and Puppeteer",
   "main": "index.js",
   "scripts": {
-    "quiet": "echo \"Shutting down\"",
     "test": "jest",
     "test-update": "jest --updateSnapshot"
   },

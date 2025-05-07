@@ -1,3 +1,6 @@
+const path = require('path');
+const kebabCase = require('lodash/kebabCase');
+
 global.config = {
   // Change the port number to what your application uses for local development!
   baseUrl: process.env.TEST_BASE_URL
@@ -5,8 +8,8 @@ global.config = {
 
 global.utils = {
   loadPage: async (urlPath) => {
-    page.on('console', msg => console.log('PAGE LOG:', msg.text()));
-    await page.goto(`${global.config.baseUrl}/${urlPath}`, { waitUntil: ['domcontentloaded', 'networkidle0'] });
+    // page.on('console', msg => console.log('PAGE LOG:', msg.text()));
+    return await page.goto(`${global.config.baseUrl}/${urlPath}`, {waitUntil: ['domcontentloaded', 'networkidle0']});
   }
 };
 
@@ -22,5 +25,6 @@ const toMatchImageSnapshot = configureToMatchImageSnapshot({
   failureThresholdType: 'percent',
   customSnapshotsDir: process.env.TEST_ROOT_DIR + '/tests/image-snapshots',
   customDiffDir: process.env.TEST_ROOT_DIR + '/tests/image-snapshots/diff',
+  customSnapshotIdentifier: ({testPath, currentTestName, counter, defaultIdentifier}) => {return kebabCase(`${path.basename(testPath)}-${currentTestName}`);},
 });
 expect.extend({ toMatchImageSnapshot });
