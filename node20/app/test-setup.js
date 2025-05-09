@@ -9,7 +9,9 @@ global.config = {
 global.utils = {
   loadPage: async (urlPath) => {
     // page.on('console', msg => console.log('PAGE LOG:', msg.text()));
-    return await page.goto(`${global.config.baseUrl}/${urlPath}`, {waitUntil: ['domcontentloaded', 'networkidle0']});
+    const httpResponse = await page.goto(`${global.config.baseUrl}/${urlPath}`, {waitUntil: ['domcontentloaded', 'networkidle0']});
+    await new Promise(r => setTimeout(r, 150));
+    return httpResponse;
   }
 };
 
