@@ -7,7 +7,7 @@ module.exports = {
         'summary',
         [
             'jest-junit', {
-                outputDirectory: process.env.TEST_ROOT_DIR + '/tests/reports',
+                outputDirectory: process.env.TEST_ROOT_DIR + '/tests/test-reports',
                 outputName: './jest-junit.xml'
             }
         ]
