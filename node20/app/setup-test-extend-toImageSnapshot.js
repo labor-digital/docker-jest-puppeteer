@@ -1,18 +1,6 @@
 const path = require('path');
 const kebabCase = require('lodash/kebabCase');
 
-global.config = {
-  // Change the port number to what your application uses for local development!
-  baseUrl: process.env.TEST_BASE_URL
-};
-
-global.utils = {
-  loadPage: async (urlPath) => {
-    // page.on('console', msg => console.log('PAGE LOG:', msg.text()));
-    return await page.goto(`${global.config.baseUrl}/${urlPath}`, {waitUntil: ['domcontentloaded', 'networkidle0']});
-  }
-};
-
 // jest-image-snapshot setup
 // extend `expect` with `toMatchImageSnapshot` and set global configuration options
 const { configureToMatchImageSnapshot } = require('jest-image-snapshot');

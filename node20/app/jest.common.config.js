@@ -10,12 +10,25 @@ module.exports = {
                 outputDirectory: process.env.TEST_ROOT_DIR + '/tests/test-reports',
                 outputName: './jest-junit.xml'
             }
-        ]
+        ],
+        [
+            'jest-ctrf-json-reporter', {
+                outputDir: process.env.TEST_ROOT_DIR + '/tests/test-reports',
+                outputFile: './jest-ctrf.json'
+            }
+        ],
     ],
     roots: [
         process.env.TEST_ROOT_DIR
     ],
-    setupFilesAfterEnv: ['./test-setup.js'],
+    setupFiles: [
+        './setup-test-global-config.js',
+        './setup-test-global-utils.js',
+    ],
+    setupFilesAfterEnv: [
+        './setup-test-extend-toImageSnapshot.js'
+    ],
+    globalTeardown: "./global-teardown.js",
     testMatch: [
         '**/tests/**/*.js'
     ],
