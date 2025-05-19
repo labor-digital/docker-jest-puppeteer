@@ -19,6 +19,7 @@
     "jest-junit": "^16.0.0",
     "jest-ctrf-json-reporter": "^0.0.9",
     "jest-puppeteer": "^11.0.0",
-    "puppeteer": "^24.8.0"
+    "puppeteer": "^24.8.0",
+    "https-proxy-agent": "^7.0.6"
   }
 }
