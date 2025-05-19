@@ -28,7 +28,6 @@ module.exports = {
     setupFilesAfterEnv: [
         './setup-test-extend-toImageSnapshot.js'
     ],
-    globalTeardown: "./global-teardown.js",
     testMatch: [
         '**/tests/**/*.js'
     ],
