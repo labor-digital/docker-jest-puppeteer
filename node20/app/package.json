@@ -6,7 +6,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "test-update": "jest --updateSnapshot"
+    "test-update": "jest --updateSnapshot",
+    "test-debug":  "jest --debug",
+    "test-runInBand":  "jest --runInBand"
   },
   "license": "ISC",
   "devDependencies": {
@@ -14,13 +16,16 @@
     "@babel/plugin-transform-runtime": "^7.27.1",
     "@babel/preset-env": "^7.27.1",
     "babel-jest": "^29.7.0",
+    "http-proxy-agent": "^7.0.2",
+    "https-proxy-agent": "^7.0.6",
     "jest": "^29.7.0",
+    "jest-ctrf-json-reporter": "^0.0.9",
     "jest-image-snapshot": "^6.4.0",
     "jest-junit": "^16.0.0",
-    "jest-ctrf-json-reporter": "^0.0.9",
     "jest-puppeteer": "^11.0.0",
-    "puppeteer": "^24.8.0",
-    "https-proxy-agent": "^7.0.6",
-    "http-proxy-agent": "^7.0.2"
+    "puppeteer": "^24.8.0"
+  },
+  "dependencies": {
+    "scroll-to-bottomjs": "^1.1.0"
   }
 }
