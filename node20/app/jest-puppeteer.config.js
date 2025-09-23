@@ -1,11 +1,14 @@
 const config = {
   launch: {
     acceptInsecureCerts: true,
-    // slowMo: 1000,
+    // slowMo: 10,
     args: [
       '--no-sandbox',
-      // '--window-size=1920,1080',
+      '--window-size=1920,1080',
+      '--font-render-hinting=none',
+      '--enable-font-antialiasing',
     ],
+    headless: true,
     defaultViewport: {
       width: 1920,
       height: 1080

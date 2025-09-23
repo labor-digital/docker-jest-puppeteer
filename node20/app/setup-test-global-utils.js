@@ -3,11 +3,13 @@ let scrollToBottom = require("scroll-to-bottomjs");
 global.utils = {
   loadPage: async (urlPath) => {
     // page.on('console', msg => console.log('PAGE LOG:', msg.text()));
-    return await page.goto(`${global.config.baseUrl}/${urlPath}`, {waitUntil: ['domcontentloaded', 'networkidle0']});
+    await page.goto(`${global.config.baseUrl}/${urlPath}`);//, {waitUntil: ['domcontentloaded', 'networkidle0']});
+    return await page.waitForNavigation({ waitUntil: 'networkidle0' });
   },
   loadPageLoc: async (pageLoc, urlPath) => {
     // page.on('console', msg => console.log('PAGE LOG:', msg.text()));
-    return await pageLoc.goto(`${global.config.baseUrl}/${urlPath}`, {waitUntil: ['domcontentloaded', 'networkidle0']});
+    await pageLoc.goto(`${global.config.baseUrl}/${urlPath}`);//, {waitUntil: ['domcontentloaded', 'networkidle0']});
+    return await pageLoc.waitForNavigation({ waitUntil: 'networkidle0' });
   },
   scrollToBottom: async () => {
     await page.evaluate(scrollToBottom);
@@ -29,7 +31,7 @@ global.utils = {
             clearInterval(timer);
             resolve();
           }
-        }, 100);
+        },  );
       });
     });
   }
