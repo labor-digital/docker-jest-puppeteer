@@ -4,6 +4,7 @@ const config = {
     // slowMo: 10,
     args: [
       '--no-sandbox',
+      '--disable-setuid-sandbox',
       '--window-size=1920,1080',
       '--font-render-hinting=none',
       '--enable-font-antialiasing',
