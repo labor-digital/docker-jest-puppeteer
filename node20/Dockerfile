@@ -19,7 +19,7 @@ RUN npm cache clean --force
 RUN npm install
 # Install browsers for puppeteer
 #RUN ./node_modules/puppeteer/install.mjs
-RUN npx @puppeteer/browsers install chrome@stable
+#RUN npx @puppeteer/browsers install chrome@stable
 
 # Now add all the other files to improve docker layer caching
 ADD app/. /app
